@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Eval test case</title>
+
+	<script>
+		var url = "https://public-firing-range.appspot.com/dom/toxicdom/postMessage/eval";
+		function popup(){
+			sender = open(url, "pop", "width=850,height=750,resizable=1");
+			setTimeout(send, 1000)
+		}
+		function send(){
+			sender.postMessage("alert(origin)","https://public-firing-range.appspot.com");
+		}
+	</script>
+</head>
+<body>
+
+<h1>Start</h1>
+<input type="button" value="Start" onclick="popup()" >
+
+</body>
+</html>

